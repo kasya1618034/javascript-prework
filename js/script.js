@@ -24,9 +24,23 @@ let playerMove = 'nieznany ruch';
 if(playerInput == '1'){
   playerMove = 'kamień';
 } else if(playerInput == '2') {
-  playerMove = 'papier'; 
+  playerMove = 'papier';
 } else if(playerInput == '3') {
   playerMove = 'nożyce';
 }
 
 printMessage('Twój ruch to: ' + playerMove);
+
+if(computerMove == 'kamień' && playerMove == 'kamień') ||
+  (computerMove == 'papier' && playerMove == 'papier') ||
+  (computerMove == 'nożyce' && playerMove == 'nożyce') {
+    printMessage('Mamy remis!');
+} else if (computerMove == 'kamień' && playerMove == 'papier') ||
+          (computerMove == 'papier' && playerMove == 'nożyce') ||
+          (computerMove == 'nożyce' && playerMove == 'kamień') {
+    printMessage('Ty wygrywasz!');
+} else if (playerMove == 'nieznany ruch')
+    printMessage('Wybierz liczbę 1, 2 lub 3');
+} else {
+    printMessage('Ja wygrywam!');
+}
