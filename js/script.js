@@ -3,7 +3,7 @@ function getMoveName(argMoveId){
     return 'kamień';
   } else if(argMoveId == 2) {
     return 'papier';
-  } else if (argMoveId) == 3) {
+  } else if (argMoveId == 3) {
     return 'nożyce';
   } else {
     printMessage('Nie znam ruchu o id ' + argMoveId + '.');
@@ -12,7 +12,11 @@ function getMoveName(argMoveId){
 }
 
 function displayResult(argComputerMove, argPlayerMove){
-  if(argComputerMove == 'kamień' && argPlayerMove == 'papier') || (argComputerMove == 'papier' && argPlayerMove == 'nożyce') || (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
+  if(argComputerMove == 'kamień' && argPlayerMove == 'papier') {
+      printMessage('Ty wygrywasz!');
+  } else if(argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
+      printMessage('Ty wygrywasz!');
+  } else if(argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
       printMessage('Ty wygrywasz!');
   } else if(argComputerMove == argPlayerMove) {
       printMessage('Mamy remis!');
@@ -53,4 +57,6 @@ let playerMove = getMoveName(playerInput);
 
 printMessage('Twój ruch to: ' + playerMove);
 
-let result = displayResult(argComputerMove, argPlayerMove)
+/*let result = displayResult(argComputerMove, argPlayerMove);*/ 
+
+displayResult()
